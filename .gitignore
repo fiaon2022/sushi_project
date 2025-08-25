@@ -1,5 +1,27 @@
-/Library
-/Temp
-/Assets
-/Build
+Library/
+Temp/
+Logs/
+Obj/
+MemoryCaptures/
+
+# Ignore the editor settings
+.vscode/
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+
+# ビルド結果
+Build/
+Builds/
+
 sushi.apk

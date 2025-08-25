@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class ItemCollisionDestroyer : MonoBehaviour
+{
+    public GameObject newObjectPrefab; // 生成するプレハブ
+    public string targetTag = "Target"; // 衝突対象のタグ
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("sushi"))
+        {
+            // 衝突位置の中央を計算
+            Vector3 spawnPosition = (transform.position + collision.transform.position) / 2;
+
+            // 新しいオブジェクトを生成
+            Instantiate(newObjectPrefab, spawnPosition, Quaternion.identity);
+
+            // 両方削除
+            Destroy(collision.gameObject); // 相手
+            Destroy(gameObject); // 自分
+        }
+    }
+}
